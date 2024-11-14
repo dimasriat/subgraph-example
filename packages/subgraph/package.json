@@ -1,0 +1,23 @@
+{
+  "name": "@subgraph-example/subgraph",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf ./src/types ./build subgraph.yaml",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph-mainnet.yaml.mustache > subgraph.yaml",
+    "codegen": "graph codegen --output-dir src/types/",
+    "build:graph": "npx graph build",
+    "build:mainnet": "yarn clean && yarn prepare:mainnet && yarn codegen && yarn build:graph",
+    "format": "prettier --write \"src/**/*.ts\" \"config/**/*.json\""
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.53.0",
+    "@graphprotocol/graph-ts": "0.28.0",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}

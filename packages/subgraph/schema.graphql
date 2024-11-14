@@ -1,0 +1,11 @@
+type Counter @entity {
+  id: ID!
+  creator: User!
+  count: BigInt!
+}
+
+type User @entity {
+  id: ID!
+  address: String!
+  bribeDeposits: [Counter!] @derivedFrom(field: "creator")
+}

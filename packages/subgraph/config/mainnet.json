@@ -1,0 +1,8 @@
+{
+  "network": "arbitrum-one",
+  "counter_factory": {
+    "name": "counter_factory",
+    "address": "0x10aF41277AB21750625b6499B690B10DA48807db",
+    "startBlock": 274327281
+  }
+}
