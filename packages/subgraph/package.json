@@ -9,7 +9,7 @@
     "prepare:mainnet": "mustache config/mainnet.json subgraph-mainnet.yaml.mustache > subgraph.yaml",
     "codegen": "graph codegen --output-dir src/types/",
     "build:graph": "npx graph build",
-    "build:mainnet": "yarn clean && yarn prepare:mainnet && yarn codegen && yarn build:graph",
+    "build:mainnet": "pnpm clean && pnpm prepare:mainnet && pnpm codegen && pnpm build:graph",
     "format": "prettier --write \"src/**/*.ts\" \"config/**/*.json\""
   },
   "dependencies": {
