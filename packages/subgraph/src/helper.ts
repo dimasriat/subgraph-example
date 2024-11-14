@@ -1,5 +1,5 @@
 import { BigInt } from '@graphprotocol/graph-ts';
-import { Counter } from './types/schema';
+import { Counter, User } from './types/schema';
 
 export let ZERO_BI = BigInt.fromI32(0);
 export let ONE_BI = BigInt.fromI32(1);
@@ -13,9 +13,23 @@ export function getOrCreateCounter(counterAddress: string): Counter {
     counter = new Counter(id);
 
     counter.creator = ADDRESS_ZERO;
+    counter.count = ZERO_BI;
 
     counter.save();
   }
 
   return counter;
+}
+
+export function getOrCreateUser(userAddress: string): User {
+  let id = userAddress;
+  let user = User.load(id);
+
+  if (user === null) {
+    user = new User(id);
+
+    user.save();
+  }
+
+  return user;
 }

@@ -6,6 +6,5 @@ type Counter @entity {
 
 type User @entity {
   id: ID!
-  address: String!
-  bribeDeposits: [Counter!] @derivedFrom(field: "creator")
+  counters: [Counter!] @derivedFrom(field: "creator")
 }
