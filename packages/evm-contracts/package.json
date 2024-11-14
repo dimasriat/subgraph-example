@@ -3,14 +3,8 @@
   "scripts": {
     "build": "hardhat compile --force",
     "test": "hardhat test",
-    "deploy:coin": "hardhat deploy omnicoin",
-    "deploy:factory": "hardhat deploy omnicoin-factory",
-    "deploy:lz-v1": "hardhat deploy lz-v1",
-    "task:play": "hardhat play",
-    "omni-factory:prepare": "hardhat omni-factory:prepare",
-    "omni-factory:exec": "hardhat omni-factory:exec",
-    "omni-coin:prepare": "hardhat omni-coin:prepare",
-    "omni-coin:exec": "hardhat omni-coin:exec",
+    "deploy:factory": "hardhat deploy-counter-factory",
+    "verify:counter": "hardhat verify-counter",
     "format": "prettier --write ."
   },
   "devDependencies": {
